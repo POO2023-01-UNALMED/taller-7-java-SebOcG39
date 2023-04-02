@@ -1,23 +1,23 @@
 package comunicacion;
-import java.util.ArrayList;
 
 public class Tesis extends Escrito{
     public String idea;
-    public static ArrayList<String> argumentos= new ArrayList<String>();
+    public String[] argumentos;
     public String conclusion;
     public String referencias;
     public String interpretacion;
 
-    public Tesis(String origen, String titulo, String autor, int paginas, String idea, String conclusion, String referencias, String interpretacion) {
+    public Tesis(String origen, String titulo, String autor, int paginas, String idea, String[] argumentos,String conclusion, String referencias, String interpretacion) {
         super(origen, titulo, autor, paginas);
         this.idea = idea;
+        this.argumentos = argumentos;
         this.conclusion = conclusion;
         this.referencias = referencias;
         this.interpretacion = interpretacion;
     }
 
     public String toString(){
-        return getOrigen()+"\n"+getTitulo()+"\n"+getAutor()+"\n"+getPaginas()+"\n"+getIdea()+"\n"+Tesis.argumentos.size()+"\n"+getConclusion()+"\n"+getReferencias();
+        return getOrigen()+"\n"+getTitulo()+"\n"+getAutor()+"\n"+getPaginas()+"\n"+getIdea()+"\n"+argumentos.length+"\n"+getConclusion()+"\n"+getReferencias();
     }
     
     public String interpretacion(){
@@ -36,12 +36,12 @@ public class Tesis extends Escrito{
         this.idea = idea;
     }
 
-    public static ArrayList<String> getArgumentos() {
-        return Tesis.argumentos;
+    public String[] getArgumentos() {
+        return this.argumentos;
     }
 
-    public static void setArgumentos(ArrayList<String> argumentos) {
-        Tesis.argumentos = argumentos;
+    public void setArgumentos(String[] argumentos) {
+        this.argumentos = argumentos;
     }
 
     public String getConclusion() {
